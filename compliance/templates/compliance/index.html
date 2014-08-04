@@ -1,0 +1,9 @@
+{% if organization_list %}
+    <ul>
+    {% for organization in organization_list %}
+        <li>{{ organization }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No organizations are available.</p>
+{% endif %}
