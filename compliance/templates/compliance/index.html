@@ -1,7 +1,7 @@
-{% if organization_list %}
+{% if employee_list %}
     <ul>
-    {% for organization in organization_list %}
-        <li>{{ organization }}</li>
+    {% for employee in employee_list %}
+        <li>{{ employee.firstName }} {{ employee.lastName }}</li>
     {% endfor %}
     </ul>
 {% else %}
