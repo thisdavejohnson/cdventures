@@ -13,17 +13,17 @@ class Employee(models.Model):
     birthday = models.DateTimeField()
     avgHoursWorked = models.IntegerField(default=0)
     addressFirstLine = models.CharField(max_length=200)
-    addressSecondLine = models.CharField(max_length=200)
+    addressSecondLine = models.CharField(max_length=200, blank=True)
     city = models.CharField(max_length=200)
     state = models.CharField(max_length=200)
     zipcode = models.CharField(max_length=200)
-    race = models.CharField(max_length=200)
+    race = models.CharField(max_length=200, blank=True)
 
     # (exempt / non-exempt)
-    flsaStatus = models.CharField(max_length=200)
+    flsaStatus = models.CharField(max_length=200, blank=True)
 
-    veteranStatus = models.CharField(max_length=200)
+    veteranStatus = models.CharField(max_length=200, blank=True)
     
     # active duty military status
-    milStatus = models.CharField(max_length=200)
+    milStatus = models.CharField(max_length=200, blank=True)
 
