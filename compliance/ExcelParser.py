@@ -18,9 +18,10 @@
 #########################
 
 import xlrd 
+from django.db import transaction
 from compliance.models import Organization, Employee
 
-class ExcelParser(object, excel_name):
+class ExcelParser(object):
     @transaction.commit_on_success        
     def read_excel(self):
         wb = xlrd.open_workbook(excel_name)
