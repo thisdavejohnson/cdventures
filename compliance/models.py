@@ -11,4 +11,19 @@ class Employee(models.Model):
     firstName = models.CharField(max_length=200)
     lastName = models.CharField(max_length=200)
     birthday = models.DateTimeField()
-    employeeID = models.IntegerField(default=0)
+    avgHoursWorked = models.IntegerField(default=0)
+    addressFirstLine = models.CharField(max_length=200)
+    addressSecondLine = models.CharField(max_length=200)
+    city = models.CharField(max_length=200)
+    state = models.CharField(max_length=200)
+    zipcode = models.CharField(max_length=200)
+    race = models.CharField(max_length=200)
+
+    # (exempt / non-exempt)
+    flsaStatus = models.CharField(max_length=200)
+
+    veteranStatus = models.CharField(max_length=200)
+    
+    # active duty military status
+    milStatus = models.CharField(max_length=200)
+
