@@ -1,9 +1,7 @@
-{% load url from future %}
 
 <h1>import data</h1>
 
-<form action="{% url 'compliance:importExcel' %}" method="post">
-{% csrf_token %}
+<form action="/compliance/" method="post">
 <input type="submit" value="Upload" />
 </form>
 
