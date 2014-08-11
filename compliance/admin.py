@@ -3,7 +3,7 @@ from compliance.models import Organization, Employee
 
 class EmployeeInline(admin.StackedInline):
 	model = Employee
-	extra = 2
+	extra = 1
 
 class OrganizationAdmin(admin.ModelAdmin):
 	fieldsets = [
