@@ -1,9 +1,9 @@
 from django.contrib import admin
 from compliance.models import Organization, Employee
 
-class EmployeeInline(admin.TabularInline):
+class EmployeeInline(admin.StackedInline):
 	model = Employee
-	extra = 5
+	extra = 2
 
 class OrganizationAdmin(admin.ModelAdmin):
 	fieldsets = [
