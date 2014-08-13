@@ -27,3 +27,36 @@ class Employee(models.Model):
     # active duty military status
     milStatus = models.CharField(max_length=200, blank=True)
 
+# this class represents the result of a user answering the set of survey questions
+class Survey(models.Model)
+    numEmployees = models.IntegerField(default=0)
+    
+    NONPROFIT = 'NP'
+    PUBLIC = 'PB'
+    PRIVATE = 'PR'
+    UNION = 'UN'
+    EMPLOYMENTAGENCY = 'EA'
+    STATEGOVERNMENT = 'SG'
+    LOCALGOVERNMENT = 'LG'
+    FEDERALCONTRACTOR = 'FC'
+    FEDERALSUBCONTRACTOR = 'FS'
+
+    ORG_TYPE_CHOICES = (
+        (NONPROFIT, 'Non-profit'),
+        (PUBLIC, 'Public'),
+        (PRIVATE, 'Private'),
+        (STATEGOVERNMENT, 'State Government'),
+        (LOCALGOVERNMENT, 'Local Government'),
+        (FEDERALCONTRACTOR, 'Federal Contractor'),
+        (FEDERALSUBCONTRACTOR, 'Federal Sub-contractor'),
+    )
+
+    orgType = models.CharField(max_length=2,
+                               choices=ORG_TYPE_CHOICES,
+                               default=private)
+
+    # contracts amount over $25k?
+    contractsSize = models.BooleanField(default=False)
+
+    def __unicode__(self):
+        return self.name
